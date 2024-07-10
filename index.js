@@ -46,8 +46,8 @@ const processFiles = (callback) => {
   }
 }
 
-// Calculate font sizes and prepare output
-const assignFontSizesAndOutput = (wordCounts) => {
+// Calculate word sizes and prepare output
+const assignWordSizesAndOutput = (wordCounts) => {
   try {
     const maxFrequency = Math.max(...Object.values(wordCounts));
     const sortedWords = Object.keys(wordCounts).sort((a, b) => wordCounts[b] - wordCounts[a]);
@@ -81,7 +81,7 @@ const main = () => {
       if (err) {
         console.error('Error processing files:', err);
       } else {
-        assignFontSizesAndOutput(combinedCounts);
+        assignWordSizesAndOutput(combinedCounts);
       }
     });
   } catch (err) {
